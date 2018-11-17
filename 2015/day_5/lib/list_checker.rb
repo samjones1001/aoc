@@ -1,4 +1,5 @@
 require_relative 'item_checker'
+require_relative 'item_checker_two'
 
 class ListChecker
   attr_reader :item_checker
@@ -14,7 +15,7 @@ class ListChecker
   end
 end
 
-checker = ListChecker.new
+checker = ListChecker.new(ItemCheckerTwo)
 p checker.nice_count("uxcplgxnkwbdwhrp
 suerykeptdsutidb
 dmrtgdkaimrrwmej

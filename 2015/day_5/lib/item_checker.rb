@@ -8,18 +8,20 @@ class ItemChecker
     true
   end
 
-  private_class_method
-  def self.vowel_count(string)
-    string.scan(/[aeiou]/).count
-  end
+  class << self
+    private
+    def vowel_count(string)
+      string.scan(/[aeiou]/).count
+    end
 
-  def self.has_double_letters?(string)
-    string.split('').each_with_index { |char, i| return true if char == string[i + 1] }
-    false
-  end
+    def has_double_letters?(string)
+      string.split('').each_with_index { |char, i| return true if char == string[i + 1] }
+      false
+    end
 
-  def self.has_illegal_substring?(string)
-    illegals = ['ab', 'cd', 'pq', 'xy']
-    string.match(Regexp.union(illegals))
+    def has_illegal_substring?(string)
+      illegals = ['ab', 'cd', 'pq', 'xy']
+      string.match(Regexp.union(illegals))
+    end
   end
 end
